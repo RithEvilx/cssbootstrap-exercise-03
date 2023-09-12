@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ddd;
+}
+.container {
+  width: 370px;
+  margin: 100px auto;
+  color: black;
+  background-color: #fff;
+  padding: 30px;
+}
+h2 {
+  margin-bottom: 20px;
+}
+ul {
+  list-style-position: inside;
+}
+.list {
+  list-style-type: upper-roman;
+}
+.nested {
+  text-indent: 30px;
+}
+.nest-1 ul {
+  list-style-type: lower-alpha;
+}
+.nest-2 ul {
+  list-style-type: decimal;
+}
+.nest-3 ul {
+  list-style-type: disc;
+}
+
+/* Counter */
+/* Counter-Reset */
+.list {
+  counter-reset: list;
+}
+.nested ul {
+  counter-reset: nested;
+}
+
+/* Counter-Increment */
+.list li {
+  counter-increment: list;
+}
+.nested ul li {
+  counter-increment: nested;
+}
+
+/* Counter() */
+.list li::after {
+  content: " " counter(list);
+}
+.nested ul li::after {
+  content: " " counter(list) "." counter(nested);
+}
